@@ -36,7 +36,7 @@ list-style:none;
 /* TOP BAR */
 
 .top-bar{
-background:#ff4f93;
+background:#6C3EB8;
 color:#fff;
 padding:10px 5%;
 display:flex;
@@ -215,7 +215,7 @@ color:#fff;
 }
 
 .shop-btn:hover{
-background:#e91e63;
+background:#5B21B6;
 transform:translateY(-4px);
 }
 
