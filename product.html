@@ -2,20 +2,17 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beginner Bracelet Kit | YouCanCraftHub</title>
 
-<meta charset="UTF-8">
+    <link rel="stylesheet" href="css/main.css">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
 
-<title>Product Details | YouCanCraftHub</title>
-
-<link rel="stylesheet" href="css/main.css">
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
 
 <body>
@@ -23,64 +20,50 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
 <!-- TOP BAR -->
 
 <div class="top-bar">
+    <div>🚚 FREE SHIPPING ABOVE ₹499</div>
 
-<div>🚚 FREE SHIPPING ABOVE ₹499</div>
-
-<div class="top-links">
-
-<a href="index.html">Home</a>
-
-<a href="shop.html">Shop</a>
-
-<a href="#">Contact</a>
-
-</div>
-
+    <div class="top-links">
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="#">Contact</a>
+    </div>
 </div>
 
 <!-- HEADER -->
 
 <header>
 
-<div class="logo">
+    <div class="logo">
+        <a href="index.html">
+            <img src="images/logo.png" alt="YouCanCraftHub">
+        </a>
+    </div>
 
-<img src="images/logo.png" alt="Logo">
+    <div class="search-box">
+        <input type="text" placeholder="Search Products...">
+        <button>
+            <i class="fa fa-search"></i>
+        </button>
+    </div>
 
-</div>
+    <div class="header-icons">
 
-<div class="search-box">
+        <div>
+            <i class="fa-regular fa-heart"></i>
+            <p>Wishlist</p>
+        </div>
 
-<input
-type="text"
-placeholder="Search Products...">
+        <div>
+            <a href="cart.html" style="text-decoration:none;color:inherit;">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <p>
+                    Cart
+                    (<span id="cartCount">0</span>)
+                </p>
+            </a>
+        </div>
 
-<button>
-
-<i class="fa fa-search"></i>
-
-</button>
-
-</div>
-
-<div class="header-icons">
-
-<div>
-
-<i class="fa-regular fa-heart"></i>
-
-<p>Wishlist</p>
-
-</div>
-
-<div>
-
-<i class="fa-solid fa-cart-shopping"></i>
-
-<p>Cart</p>
-
-</div>
-
-</div>
+    </div>
 
 </header>
 
@@ -88,188 +71,129 @@ placeholder="Search Products...">
 
 <section class="product-page">
 
-<div class="product-images">
+    <div class="product-images">
 
-<img id="mainImage"
+        <img id="mainImage"
+            src="images/product1.jpg"
+            class="main-image"
+            alt="Beginner Bracelet Kit">
 
-src="images/product1.jpg"
+        <div class="thumbnail-row">
 
-class="main-image">
+            <img src="images/product1.jpg" onclick="changeImage(this)">
 
-<div class="thumbnail-row">
+            <img src="images/product2.jpg" onclick="changeImage(this)">
 
-<img src="images/product1.jpg"
+            <img src="images/product3.jpg" onclick="changeImage(this)">
 
-onclick="changeImage(this)">
+            <img src="images/product4.jpg" onclick="changeImage(this)">
 
-<img src="images/product2.jpg"
+        </div>
 
-onclick="changeImage(this)">
+    </div>
 
-<img src="images/product3.jpg"
+    <div class="product-info">
 
-onclick="changeImage(this)">
+        <h1>Beginner Bracelet Kit</h1>
 
-<img src="images/product4.jpg"
+        <div class="rating">
+            ★★★★★ (125 Reviews)
+        </div>
 
-onclick="changeImage(this)">
+        <h2>
+            ₹99
+            <del>₹149</del>
+        </h2>
 
-</div>
+        <p>
+            Perfect DIY kit for beginners.
+            Includes beads, charms, elastic thread and findings.
+        </p>
 
-</div>
+        <h3>
+            Availability :
+            <span style="color:green;">In Stock</span>
+        </h3>
 
-<div class="product-info">
+        <h3>
+            Category : DIY Kits
+        </h3>
 
-<h1>
+        <!-- Quantity -->
 
-Beginner Bracelet Kit
+        <div class="quantity">
 
-</h1>
+            <button onclick="minusQty()">-</button>
 
-<div class="rating">
+            <input
+                id="qty"
+                type="text"
+                value="1"
+                readonly>
 
-★★★★★
+            <button onclick="plusQty()">+</button>
 
-(125 Reviews)
+        </div>
 
-</div>
+        <!-- Buttons -->
 
-<h2>
+        <div class="buttons">
 
-₹99
+            <button
+                class="cart-btn"
+                onclick="addToCart(1)">
+                Add to Cart
+            </button>
 
-<del>
+            <button
+                class="buy-btn"
+                onclick="buyProduct()">
+                Order on WhatsApp
+            </button>
 
-₹149
+        </div>
 
-</del>
+        <!-- Share -->
 
-</h2>
+        <div class="share">
 
-<p>
+            <h3>Share</h3>
 
-Perfect DIY kit for beginners.
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-whatsapp"></i>
+            <i class="fab fa-pinterest"></i>
 
-Includes beads, charms, elastic thread and findings.
+        </div>
 
-</p>
-
-<h3>
-
-Availability :
-
-<span style="color:green;">
-
-In Stock
-
-</span>
-
-</h3>
-
-<h3>
-
-Category :
-
-DIY Kits
-
-</h3>
-
-<div class="quantity">
-
-<button onclick="minusQty()">
-
--
-
-</button>
-
-<input
-
-id="qty"
-
-type="text"
-
-value="1">
-
-<button onclick="plusQty()">
-
-+
-
-</button>
-
-</div>
-
-<div class="buttons">
-
-<button class="cart-btn">
-
-Add to Cart
-
-</button>
-
-<button class="buy-btn"
-
-onclick="buyProduct()">
-
-Order on WhatsApp
-
-</button>
-
-</div>
-
-<div class="share">
-
-<h3>
-
-Share
-
-</h3>
-
-<i class="fab fa-facebook"></i>
-
-<i class="fab fa-instagram"></i>
-
-<i class="fab fa-whatsapp"></i>
-
-<i class="fab fa-pinterest"></i>
-
-</div>
-
-</div>
+    </div>
 
 </section>
 
 <script>
 
 function changeImage(img){
-
-document.getElementById("mainImage").src=img.src;
-
+    document.getElementById("mainImage").src = img.src;
 }
 
 function plusQty(){
-
-let q=document.getElementById("qty");
-
-q.value=parseInt(q.value)+1;
-
+    let q = document.getElementById("qty");
+    q.value = parseInt(q.value) + 1;
 }
 
 function minusQty(){
+    let q = document.getElementById("qty");
 
-let q=document.getElementById("qty");
-
-if(parseInt(q.value)>1)
-
-q.value=parseInt(q.value)-1;
-
+    if(parseInt(q.value) > 1){
+        q.value = parseInt(q.value) - 1;
+    }
 }
 
 function buyProduct(){
 
-const qty=document.getElementById("qty").value;
+    const qty = document.getElementById("qty").value;
 
-const msg=
-
+    const msg =
 `Hi YouCanCraftHub 👋
 
 I want to order
@@ -278,84 +202,68 @@ Beginner Bracelet Kit
 
 Quantity : ${qty}`;
 
-window.open(
-
-"https://wa.me/919999999999?text="+encodeURIComponent(msg)
-
-);
+    window.open(
+        "https://wa.me/918668098532?text=" +
+        encodeURIComponent(msg)
+    );
 
 }
+
+</script>
+
+<!-- PRODUCT DESCRIPTION -->
 
 
   <!-- PRODUCT DESCRIPTION -->
 
 <section class="products">
 
-<h2>Product Description</h2>
+    <h2>Product Description</h2>
 
-<div style="max-width:1100px;margin:auto;background:white;padding:35px;border-radius:15px;box-shadow:0 5px 20px rgba(0,0,0,.08);">
+    <div style="max-width:1100px;margin:auto;background:#fff;padding:35px;border-radius:15px;box-shadow:0 5px 20px rgba(0,0,0,.08);">
 
-<p>
+        <p>
+            This Beginner Bracelet Kit is specially designed for anyone starting their jewellery-making journey.
+            Inside the kit you'll find carefully selected beads, charms, findings and elastic thread to create beautiful bracelets.
+        </p>
 
-This Beginner Bracelet Kit is specially designed for anyone starting their jewellery-making journey.
+        <br>
 
-Inside the kit you'll find carefully selected beads, charms, findings and elastic thread to create beautiful bracelets.
+        <h3>Package Includes</h3>
 
-</p>
+        <ul style="margin-left:20px;line-height:2;">
+            <li>✔ Acrylic Beads</li>
+            <li>✔ Jelly Beads</li>
+            <li>✔ Charms</li>
+            <li>✔ Elastic Thread</li>
+            <li>✔ Findings</li>
+            <li>✔ Surprise Gift (Launch Offer)</li>
+        </ul>
 
-<br>
+        <br>
 
-<h3>Package Includes</h3>
+        <h3>Specifications</h3>
 
-<ul style="margin-left:20px;line-height:2;">
+        <table style="width:100%;border-collapse:collapse;">
 
-<li>✔ Acrylic Beads</li>
+            <tr>
+                <td style="padding:12px;border:1px solid #ddd;"><b>Material</b></td>
+                <td style="padding:12px;border:1px solid #ddd;">Acrylic & Resin</td>
+            </tr>
 
-<li>✔ Jelly Beads</li>
+            <tr>
+                <td style="padding:12px;border:1px solid #ddd;"><b>Suitable For</b></td>
+                <td style="padding:12px;border:1px solid #ddd;">Beginners & Professionals</td>
+            </tr>
 
-<li>✔ Charms</li>
+            <tr>
+                <td style="padding:12px;border:1px solid #ddd;"><b>Country</b></td>
+                <td style="padding:12px;border:1px solid #ddd;">India</td>
+            </tr>
 
-<li>✔ Elastic Thread</li>
+        </table>
 
-<li>✔ Findings</li>
-
-<li>✔ Surprise Gift (Launch Offer)</li>
-
-</ul>
-
-<br>
-
-<h3>Specifications</h3>
-
-<table style="width:100%;border-collapse:collapse;">
-
-<tr>
-
-<td style="padding:12px;border:1px solid #ddd;"><b>Material</b></td>
-
-<td style="padding:12px;border:1px solid #ddd;">Acrylic & Resin</td>
-
-</tr>
-
-<tr>
-
-<td style="padding:12px;border:1px solid #ddd;"><b>Suitable For</b></td>
-
-<td style="padding:12px;border:1px solid #ddd;">Beginners & Professionals</td>
-
-</tr>
-
-<tr>
-
-<td style="padding:12px;border:1px solid #ddd;"><b>Country</b></td>
-
-<td style="padding:12px;border:1px solid #ddd;">India</td>
-
-</tr>
-
-</table>
-
-</div>
+    </div>
 
 </section>
 
@@ -363,59 +271,32 @@ Inside the kit you'll find carefully selected beads, charms, findings and elasti
 
 <section class="products">
 
-<h2>You May Also Like</h2>
+    <h2>You May Also Like</h2>
 
-<div class="product-grid">
+    <div class="product-grid">
 
-<div class="product-card">
+        <div class="product-card">
+            <img src="images/product2.jpg" alt="">
+            <h3>Pastel Acrylic Beads</h3>
+            <h2>₹69</h2>
+            <button class="buy-btn">View Product</button>
+        </div>
 
-<img src="images/product2.jpg">
+        <div class="product-card">
+            <img src="images/product3.jpg" alt="">
+            <h3>Gold Findings</h3>
+            <h2>₹49</h2>
+            <button class="buy-btn">View Product</button>
+        </div>
 
-<h3>Pastel Acrylic Beads</h3>
+        <div class="product-card">
+            <img src="images/product4.jpg" alt="">
+            <h3>8mm Jelly Beads</h3>
+            <h2>₹89</h2>
+            <button class="buy-btn">View Product</button>
+        </div>
 
-<h2>₹69</h2>
-
-<button class="buy-btn">
-
-View Product
-
-</button>
-
-</div>
-
-<div class="product-card">
-
-<img src="images/product3.jpg">
-
-<h3>Gold Findings</h3>
-
-<h2>₹49</h2>
-
-<button class="buy-btn">
-
-View Product
-
-</button>
-
-</div>
-
-<div class="product-card">
-
-<img src="images/product4.jpg">
-
-<h3>8mm Jelly Beads</h3>
-
-<h2>₹89</h2>
-
-<button class="buy-btn">
-
-View Product
-
-</button>
-
-</div>
-
-</div>
+    </div>
 
 </section>
 
@@ -423,55 +304,29 @@ View Product
 
 <section class="reviews">
 
-<h2>Customer Reviews</h2>
+    <h2>Customer Reviews</h2>
 
-<div class="review-grid">
+    <div class="review-grid">
 
-<div class="review">
+        <div class="review">
+            ⭐⭐⭐⭐⭐
+            <p>Excellent quality. Perfect for beginners.</p>
+            <h4>- Priya</h4>
+        </div>
 
-⭐⭐⭐⭐⭐
+        <div class="review">
+            ⭐⭐⭐⭐⭐
+            <p>Loved the surprise gift.</p>
+            <h4>- Sneha</h4>
+        </div>
 
-<p>
+        <div class="review">
+            ⭐⭐⭐⭐⭐
+            <p>Fast delivery and beautiful beads.</p>
+            <h4>- Kavya</h4>
+        </div>
 
-Excellent quality.
-
-Perfect for beginners.
-
-</p>
-
-<h4>- Priya</h4>
-
-</div>
-
-<div class="review">
-
-⭐⭐⭐⭐⭐
-
-<p>
-
-Loved the surprise gift.
-
-</p>
-
-<h4>- Sneha</h4>
-
-</div>
-
-<div class="review">
-
-⭐⭐⭐⭐⭐
-
-<p>
-
-Fast delivery and beautiful beads.
-
-</p>
-
-<h4>- Kavya</h4>
-
-</div>
-
-</div>
+    </div>
 
 </section>
 
@@ -479,373 +334,67 @@ Fast delivery and beautiful beads.
 
 <footer>
 
-<div class="footer-grid">
+    <div class="footer-grid">
 
-<div>
+        <div>
+            <h3>YouCanCraftHub</h3>
+            <p>Everything for Jewellery Making</p>
+        </div>
 
-<h3>YouCanCraftHub</h3>
+        <div>
+            <h3>Quick Links</h3>
 
-<p>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
 
-Everything for Jewellery Making
+        <div>
 
-</p>
+            <h3>Customer Care</h3>
 
-</div>
+            <ul>
+                <li>Shipping Policy</li>
+                <li>Return Policy</li>
+                <li>Privacy Policy</li>
+                <li>FAQ</li>
+            </ul>
 
-<div>
+        </div>
 
-<h3>Quick Links</h3>
+        <div>
 
-<ul>
+            <h3>Follow Us</h3>
 
-<li><a href="index.html">Home</a></li>
+            <p>📷 Instagram</p>
+            <p>💬 WhatsApp</p>
+            <p>▶ YouTube</p>
 
-<li><a href="shop.html">Shop</a></li>
+        </div>
 
-<li><a href="#">About</a></li>
+    </div>
 
-<li><a href="#">Contact</a></li>
+    <hr>
 
-</ul>
-
-</div>
-
-<div>
-
-<h3>Customer Care</h3>
-
-<ul>
-
-<li>Shipping Policy</li>
-
-<li>Return Policy</li>
-
-<li>Privacy Policy</li>
-
-<li>FAQ</li>
-
-</ul>
-
-</div>
-
-<div>
-
-<h3>Follow Us</h3>
-
-<p>📷 Instagram</p>
-
-<p>💬 WhatsApp</p>
-
-<p>▶ YouTube</p>
-
-</div>
-
-</div>
-
-<hr>
-
-<p class="copyright">
-
-© 2026 YouCanCraftHub. All Rights Reserved.
-
-</p>
+    <p class="copyright">
+        © 2026 YouCanCraftHub. All Rights Reserved.
+    </p>
 
 </footer>
 
-<a href="https://wa.me/919999999999" class="whatsapp">
-
-💬
-
-</a>
-
-</body>
-
-</html>
-
-</script>
-
-<!-- PART 2 STARTS BELOW -->
-
-<!-- PRODUCT DESCRIPTION -->
-
-<section class="products">
-
-<h2>Product Description</h2>
-
-<div style="max-width:1100px;margin:auto;background:white;padding:35px;border-radius:15px;box-shadow:0 5px 20px rgba(0,0,0,.08);">
-
-<p>
-
-This Beginner Bracelet Kit is specially designed for anyone starting their jewellery-making journey.
-
-Inside the kit you'll find carefully selected beads, charms, findings and elastic thread to create beautiful bracelets.
-
-</p>
-
-<br>
-
-<h3>Package Includes</h3>
-
-<ul style="margin-left:20px;line-height:2;">
-
-<li>✔ Acrylic Beads</li>
-
-<li>✔ Jelly Beads</li>
-
-<li>✔ Charms</li>
-
-<li>✔ Elastic Thread</li>
-
-<li>✔ Findings</li>
-
-<li>✔ Surprise Gift (Launch Offer)</li>
-
-</ul>
-
-<br>
-
-<h3>Specifications</h3>
-
-<table style="width:100%;border-collapse:collapse;">
-
-<tr>
-
-<td style="padding:12px;border:1px solid #ddd;"><b>Material</b></td>
-
-<td style="padding:12px;border:1px solid #ddd;">Acrylic & Resin</td>
-
-</tr>
-
-<tr>
-
-<td style="padding:12px;border:1px solid #ddd;"><b>Suitable For</b></td>
-
-<td style="padding:12px;border:1px solid #ddd;">Beginners & Professionals</td>
-
-</tr>
-
-<tr>
-
-<td style="padding:12px;border:1px solid #ddd;"><b>Country</b></td>
-
-<td style="padding:12px;border:1px solid #ddd;">India</td>
-
-</tr>
-
-</table>
-
-</div>
-
-</section>
-
-<!-- RELATED PRODUCTS -->
-
-<section class="products">
-
-<h2>You May Also Like</h2>
-
-<div class="product-grid">
-
-<div class="product-card">
-
-<img src="images/product2.jpg">
-
-<h3>Pastel Acrylic Beads</h3>
-
-<h2>₹69</h2>
-
-<button class="buy-btn">
-
-View Product
-
-</button>
-
-</div>
-
-<div class="product-card">
-
-<img src="images/product3.jpg">
-
-<h3>Gold Findings</h3>
-
-<h2>₹49</h2>
-
-<button class="buy-btn">
-
-View Product
-
-</button>
-
-</div>
-
-<div class="product-card">
-
-<img src="images/product4.jpg">
-
-<h3>8mm Jelly Beads</h3>
-
-<h2>₹89</h2>
-
-<button class="buy-btn">
-
-View Product
-
-</button>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- CUSTOMER REVIEWS -->
-
-<section class="reviews">
-
-<h2>Customer Reviews</h2>
-
-<div class="review-grid">
-
-<div class="review">
-
-⭐⭐⭐⭐⭐
-
-<p>
-
-Excellent quality.
-
-Perfect for beginners.
-
-</p>
-
-<h4>- Priya</h4>
-
-</div>
-
-<div class="review">
-
-⭐⭐⭐⭐⭐
-
-<p>
-
-Loved the surprise gift.
-
-</p>
-
-<h4>- Sneha</h4>
-
-</div>
-
-<div class="review">
-
-⭐⭐⭐⭐⭐
-
-<p>
-
-Fast delivery and beautiful beads.
-
-</p>
-
-<h4>- Kavya</h4>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- FOOTER -->
-
-<footer>
-
-<div class="footer-grid">
-
-<div>
-
-<h3>YouCanCraftHub</h3>
-
-<p>
-
-Everything for Jewellery Making
-
-</p>
-
-</div>
-
-<div>
-
-<h3>Quick Links</h3>
-
-<ul>
-
-<li><a href="index.html">Home</a></li>
-
-<li><a href="shop.html">Shop</a></li>
-
-<li><a href="#">About</a></li>
-
-<li><a href="#">Contact</a></li>
-
-</ul>
-
-</div>
-
-<div>
-
-<h3>Customer Care</h3>
-
-<ul>
-
-<li>Shipping Policy</li>
-
-<li>Return Policy</li>
-
-<li>Privacy Policy</li>
-
-<li>FAQ</li>
-
-</ul>
-
-</div>
-
-<div>
-
-<h3>Follow Us</h3>
-
-<p>📷 Instagram</p>
-
-<p>💬 WhatsApp</p>
-
-<p>▶ YouTube</p>
-
-</div>
-
-</div>
-
-<hr>
-
-<p class="copyright">
-
-© 2026 YouCanCraftHub. All Rights Reserved.
-
-</p>
-
-</footer>
+<!-- Floating WhatsApp -->
 
 <a href="https://wa.me/918668098532" class="whatsapp">
-
-💬
-
+    💬
 </a>
 
-  <!-- Load product data -->
+<!-- JavaScript Files -->
+
 <script src="js/products.js"></script>
+<script src="js/app.js"></script>
 
-<!-- Load cart functions -->
-<script src="app.js"></script>
 </body>
-
 </html>
-
-  
