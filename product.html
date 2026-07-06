@@ -206,9 +206,6 @@ Add to Cart
 
 </button>
 
-  <script src="js/products.js"></script>
-<script src="app.js"></script>
-  
 <button class="buy-btn"
 
 onclick="buyProduct()">
@@ -836,69 +833,19 @@ Everything for Jewellery Making
 
 </footer>
 
-<a href="https://wa.me/919999999999" class="whatsapp">
+<a href="https://wa.me/918668098532" class="whatsapp">
 
 💬
 
 </a>
 
+  <!-- Load product data -->
+<script src="js/products.js"></script>
+
+<!-- Load cart functions -->
+<script src="app.js"></script>
 </body>
 
 </html>
 
   
-// ===============================
-// CART FUNCTIONS
-// ===============================
-
-function addToCart(id){
-
-    const product = products.find(p => p.id === id);
-
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-    const existing = cart.find(item => item.id === id);
-
-    if(existing){
-        existing.quantity += 1;
-    }else{
-        cart.push({
-            id: product.id,
-            name: product.name,
-            price: product.price,
-            image: product.image,
-            quantity: 1
-        });
-    }
-
-    localStorage.setItem("cart", JSON.stringify(cart));
-
-    alert(product.name + " added to cart 🛒");
-
-    updateCartCount();
-
-}
-
-// ===============================
-// CART COUNT
-// ===============================
-
-function updateCartCount(){
-
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-    let total = 0;
-
-    cart.forEach(item=>{
-        total += item.quantity;
-    });
-
-    const cartCount = document.getElementById("cartCount");
-
-    if(cartCount){
-        cartCount.innerText = total;
-    }
-
-}
-
-window.onload = updateCartCount;
