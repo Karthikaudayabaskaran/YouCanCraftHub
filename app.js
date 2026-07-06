@@ -20,3 +20,31 @@ function addToCart(id) {
 
     alert("Product added to cart!");
 }
+
+
+// ===============================
+// CART COUNT
+// ===============================
+
+function updateCartCount(){
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    let total = 0;
+
+    cart.forEach(item=>{
+        total += item.quantity;
+    });
+
+    const cartCount = document.getElementById("cartCount");
+
+    if(cartCount){
+        cartCount.innerText = total;
+    }
+
+}
+
+
+
+window.onload = updateCartCount;
+
