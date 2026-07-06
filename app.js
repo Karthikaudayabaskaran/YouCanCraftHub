@@ -1,9 +1,17 @@
-<script src="js/products.js"></script>
-<script src="js/app.js"></script>
+// ===============================
+// ADD TO CART
+// ===============================
+
 function addToCart(id) {
+
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
     const product = products.find(p => p.id === id);
+
+    if (!product) {
+        alert("Product not found!");
+        return;
+    }
 
     const existing = cart.find(item => item.id === id);
 
@@ -18,6 +26,8 @@ function addToCart(id) {
 
     localStorage.setItem("cart", JSON.stringify(cart));
 
+    updateCartCount();
+
     alert("Product added to cart!");
 }
 
@@ -26,25 +36,23 @@ function addToCart(id) {
 // CART COUNT
 // ===============================
 
-function updateCartCount(){
+function updateCartCount() {
 
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
     let total = 0;
 
-    cart.forEach(item=>{
+    cart.forEach(item => {
         total += item.quantity;
     });
 
     const cartCount = document.getElementById("cartCount");
 
-    if(cartCount){
+    if (cartCount) {
         cartCount.innerText = total;
     }
-
 }
 
-
-
-window.onload = updateCartCount;
-
+window.onload = function () {
+    updateCartCount();
+};
