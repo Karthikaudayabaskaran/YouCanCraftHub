@@ -82,66 +82,53 @@ description:"Strong elastic thread."
 // Load Products
 // ===============================
 
-const container=document.querySelector(".product-grid");
+const container = document.querySelector(".product-grid");
 
 if(container){
 
-container.innerHTML="";
+    container.innerHTML="";
 
-products.forEach(product=>{
+    products.forEach(product=>{
 
-container.innerHTML+=`
+        container.innerHTML += `
 
-<div class="product-card">
+        <div class="product-card">
 
-<span class="badge">
-${product.badge}
-</span>
+            <span class="badge">${product.badge}</span>
 
-<img src="${product.image}">
+            <img src="${product.image}" alt="${product.name}">
 
-<h3>${product.name}</h3>
+            <h3>${product.name}</h3>
 
-<div class="rating">
+            <div class="rating">
+                ${"⭐".repeat(product.rating)}
+            </div>
 
-${"⭐".repeat(product.rating)}
+            <h2>₹${product.price}</h2>
 
-</div>
+            <p><del>₹${product.oldPrice}</del></p>
 
-<h2>₹${product.price}</h2>
+            <p>${product.description}</p>
 
-<p>
+            <div class="buttons">
 
-<del>₹${product.oldPrice}</del>
+                <button class="cart-btn"
+                    onclick="addToCart(${product.id})">
+                    Add to Cart
+                </button>
 
-</p>
+                <button class="buy-btn"
+                    onclick="buyNow(${product.id})">
+                    WhatsApp
+                </button>
 
-<p>${product.description}</p>
+            </div>
 
-<div class="buttons">
+        </div>
 
-<button class="cart-btn"
-onclick="addToCart(${product.id})">
+        `;
 
-Add to Cart
-
-</button>
-
-<button class="buy-btn"
-
-onclick="buyNow(${product.id})">
-
-WhatsApp
-
-</button>
-
-</div>
-
-</div>
-
-`;
-
-});
+    });
 
 }
 
@@ -151,11 +138,9 @@ WhatsApp
 
 function buyNow(id){
 
-const p=products.find(x=>x.id===id);
+    const p = products.find(x => x.id === id);
 
-const message=
-
-`Hi YouCanCraftHub 👋
+    const message = `Hi YouCanCraftHub 👋
 
 I want to order:
 
@@ -165,29 +150,10 @@ I want to order:
 
 Please share payment details.`;
 
-window.open(
-
-`https://wa.me/919999999999?text=${encodeURIComponent(message)}`,
-
-"_blank"
-
-);
-
-}
-
-// ===============================
-// Cart
-// ===============================
-
-let cart=[];
-
-function addToCart(id){
-
-cart.push(id);
-
-alert("Added to Cart 🛒");
-
-console.log(cart);
+    window.open(
+        `https://wa.me/918668098532?text=${encodeURIComponent(message)}`,
+        "_blank"
+    );
 
 }
 
@@ -197,26 +163,20 @@ console.log(cart);
 
 function searchProducts(){
 
-const text=document.querySelector(".search-box input").value.toLowerCase();
+    const text = document
+        .querySelector(".search-box input")
+        .value
+        .toLowerCase();
 
-const cards=document.querySelectorAll(".product-card");
+    const cards = document.querySelectorAll(".product-card");
 
-cards.forEach(card=>{
+    cards.forEach(card=>{
 
-const title=card.querySelector("h3").innerText.toLowerCase();
+        const title = card.querySelector("h3").innerText.toLowerCase();
 
-card.style.display=
+        card.style.display =
+            title.includes(text) ? "block" : "none";
 
-title.includes(text)
-
-?
-
-"block"
-
-:
-
-"none";
-
-});
+    });
 
 }
