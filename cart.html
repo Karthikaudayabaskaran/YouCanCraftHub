@@ -256,16 +256,21 @@ saveCart();
 
 function saveCart(){
 
-localStorage.setItem("cart",JSON.stringify(cart));
+localStorage.setItem("cart", JSON.stringify(cart));
 
-loadCart();
+    if (typeof updateCartCount === "function") {
+        updateCartCount();
+    }
+
+    loadCart();
 
 }
 
 loadCart();
 
 </script>
-
+<script src="js/products.js"></script>
+<script src="js/app.js"></script>
 </body>
 
 </html>
